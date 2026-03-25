@@ -1,12 +1,12 @@
 import express from "express";
-import { prisma } from "./shared/database/prisma";
+import { authRoutes } from "./modules/auth/routes";
 
 export const app = express();
 
 app.use(express.json());
 
-app.get("/health", async (_, res) => {
-  await prisma.user.findMany();
+app.use("/auth", authRoutes);
 
-  res.json({ status: "ok", database: "connected" });
+app.get("/health", (_, res) => {
+  res.json({ status: "ok" });
 });
