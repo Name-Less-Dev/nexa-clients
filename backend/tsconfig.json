@@ -9,6 +9,14 @@
     "outDir": "./dist",
 
     /* ========================
+       Path Alias (IMPORTANTE)
+    ======================== */
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+
+    /* ========================
        Node Compatibility
     ======================== */
     "esModuleInterop": true,
