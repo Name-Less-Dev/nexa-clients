@@ -1,6 +1,14 @@
-    import { Request } from "express";
-import { User } from "@prisma/client";
+import { Request } from "express";
+import { ParamsDictionary } from "express-serve-static-core";
+import { ParsedQs } from "qs";
 
-export interface AuthRequest extends Request {
-  user?: User;
+export interface AuthRequest<
+  P = ParamsDictionary,
+  ResBody = any,
+  ReqBody = any,
+  ReqQuery = ParsedQs
+> extends Request<P, ResBody, ReqBody, ReqQuery> {
+  user?: {
+    id: string;
+  };
 }
