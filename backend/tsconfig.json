@@ -25,9 +25,7 @@
     /* ========================
        Dev Experience
     ======================== */
-    "sourceMap": true,
-
-    "typeRoots": ["./node_modules/@types", "./src/@types"]
+    "sourceMap": true
   },
 
   "include": ["src"],
